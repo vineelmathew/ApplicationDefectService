@@ -4,9 +4,9 @@ public class CreateProject {
     private String projectName;
     private String projectLead;
     private Integer teamCount;
-    private Long startDate;
+    private long startDate;
 
-    public CreateProject(String projectName, String projectLead, Integer teamCount, Long startDate) {
+    public CreateProject(String projectName, String projectLead, Integer teamCount, long startDate) {
         this.projectName = projectName;
         this.projectLead = projectLead;
         this.teamCount = teamCount;
@@ -37,11 +37,11 @@ public class CreateProject {
         this.teamCount = teamCount;
     }
 
-    public Long getStartDate() {
+    public long getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Long startDate) {
+    public void setStartDate(long startDate) {
         this.startDate = startDate;
     }
 }
