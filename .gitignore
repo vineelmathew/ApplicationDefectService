@@ -10,6 +10,7 @@ target/
 */target
 */bin
 */.idea
+*/node_modules
 
 .apt_generated
 .classpath
