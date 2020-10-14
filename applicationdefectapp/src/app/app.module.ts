@@ -7,11 +7,13 @@ import { AddprojectComponent } from './addproject/addproject.component';
 import { DefectService } from './service/defectservice';
 import { ProjectService } from './service/projectservice';
 import { HttpClientModule } from '@angular/common/http';
+import { ProjectbyIdComponent } from './projectby-id/projectby-id.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddprojectComponent
+    AddprojectComponent,
+    ProjectbyIdComponent
   ],
   imports: [
     BrowserModule,
