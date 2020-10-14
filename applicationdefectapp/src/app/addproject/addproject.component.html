@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <form #addproject=ngForm (ngSubmit)="saveProject(addproject)">
+     <div class="form-group">
+     <label>Project Name</label>
+<input type="text" name="projectName" ngModel class="form-control">
+<div class="form-group">
+<label>Project Lead</label>
+<input type="text" name="projectLead" ngModel class="form-control" required>
+</div>
+<div class="form-group">
+<label>No of people assigned</label>
+<input type="number" name="teamCount" ngModel class="form-control" required>
+</div>
+<div class="form-group">
+    <label>Project starting Date</label>
+    <input type="datetime-local" name="startDate" ngModel class="form-control" required>
+</div>
+<div class="form-group">
+    <input type="submit" value="Add project">
+</div>
+     </div>
+    </form>
+<div *ngIf="project!=undefined">
+    <div class="alert alert-success" role="alert">
+    Project Added
+      </div>
+</div>
+    </div>
+</body>
+</html>
