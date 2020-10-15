@@ -11,6 +11,8 @@ import { ProjectbyIdComponent } from './projectby-id/projectby-id.component';
 import { AdddefectComponent } from './adddefect/adddefect.component';
 import { GetalldefectsComponent } from './getalldefects/getalldefects.component';
 import { GetallprojectsComponent } from './getallprojects/getallprojects.component';
+import { UpdateprojectComponent } from './updateproject/updateproject.component';
+import { UpdatedefectComponent } from './updatedefect/updatedefect.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { GetallprojectsComponent } from './getallprojects/getallprojects.compone
     ProjectbyIdComponent,
     AdddefectComponent,
     GetalldefectsComponent,
-    GetallprojectsComponent
+    GetallprojectsComponent,
+    UpdateprojectComponent,
+    UpdatedefectComponent
   ],
   imports: [
     BrowserModule,
