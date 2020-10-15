@@ -15,5 +15,17 @@ addProject(project:Project):Observable<Project>
     let result:Observable<Project>=this.http.post<Project>(addurl,project);
     return result;
 }
+getAllProjects():Observable<Project[]>
+{
+    let result:Observable<Project[]>=this.http.get<Project[]>(this.baseurl);
+    return result;
+}
+delete(id:number):Observable<void>
+{
+    let url=this.baseurl+"/delete/"+id;
+    let observable:Observable<void>=this.http.delete<void>(url);
+    return observable;
+}
+
 
 }

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdddefectComponent } from './adddefect/adddefect.component';
 import { AddprojectComponent } from './addproject/addproject.component';
 import { GetalldefectsComponent } from './getalldefects/getalldefects.component';
+import { GetallprojectsComponent } from './getallprojects/getallprojects.component';
 import { ProjectbyIdComponent } from './projectby-id/projectby-id.component';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:"app-getalldefects",
     component:GetalldefectsComponent
+  },
+  {
+    path:"app-getallprojects",
+    component:GetallprojectsComponent
   }
 
 ];

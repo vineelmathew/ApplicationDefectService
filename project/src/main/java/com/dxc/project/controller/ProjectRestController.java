@@ -6,14 +6,11 @@ import com.dxc.project.service.IProjectService;
 import com.dxc.project.util.DateTimeUtil;
 import com.dxc.project.util.ProjectUtility;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 @RestController
@@ -48,6 +45,22 @@ public class ProjectRestController {
         ProjectDetails convertDto=projectUtility.projectDto(project);
         return convertDto;
     }
+    @GetMapping
+    public List<ProjectDetails> getAllProjects()
+    {
+        List<Project>projectList=service.getAllProjects();
+        List<ProjectDetails> results=new ArrayList<>();
+        for(Project project:projectList)
+        {
+            ProjectDetails convertDto=projectUtility.projectDto(project);
+            results.add(convertDto);
+        }
+        return results;
+    }
 
-
+    @DeleteMapping("/delete/{id}")
+    public void deleteProjectById(@PathVariable(value = "id")Integer id)
+    {
+        service.removeProject(id);
+    }
 }

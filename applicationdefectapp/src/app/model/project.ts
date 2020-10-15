@@ -1,8 +1,9 @@
 export class Project
 {
-    private projectName:string;
-    private projectLead:string;
-    private teamCount:number;
+     projectId:number
+     projectName:string;
+     projectLead:string;
+     teamCount:number;
     startDate;
     constructor(projectName:string,projectLead:string,teamCount:number,startDate)
     {

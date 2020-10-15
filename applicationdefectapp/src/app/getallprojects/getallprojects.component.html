@@ -1,1 +1,26 @@
-<p>getallprojects works!</p>
+<div class="fluid-container">
+    <table class="table table-bordered table-striped table-dark">
+        <thead>
+          <tr>
+              <th>ProjectId</th>
+              <th>projectName</th>
+              <th>project Lead</th>
+              <th>Team Count</th>
+              <th>Project start date</th>
+              <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projects">
+          <td>{{project.projectId}}</td>
+          <td>{{project.projectName}}</td>
+          <td>{{project.projectLead}}</td>
+          <td>{{project.teamCount}}</td>
+          <td>{{project.startDate|date:'short'}}</td>
+          <td>
+                       <button class="form-control" (click)="remove(project.projectId)">remove</button>
+          </td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
