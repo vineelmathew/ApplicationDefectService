@@ -1,1 +1,36 @@
-<p>updatedefect works!</p>
+<h2>Update the defect details</h2>
+    <div class="container">
+        <form #defectform=ngForm (ngSubmit)="addDefect(defectform)">
+            <div class="form-group">
+                <label>Enter the defect id to update</label>
+                <input type="number" name="defectId" class="form-control" ngModel>
+            </div>
+         <div class="form-group">
+         <label>summary of the defect</label>
+    <input type="text" name="summary" ngModel class="form-control">
+    <div class="form-group">
+    <label>how serious the defect is</label>
+    <select name="priority" class="form-control" [(ngModel)]="selectedOption">
+           <option value="high">high</option>
+           <option value="medium">medium</option>
+           <option value="low">low</option>
+    </select>
+    </div>
+    <div class="form-group">
+    <label>Project Id</label>
+    <input type="number" name="projectId" ngModel class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>defectDate</label>
+        <input type="datetime-local" name="defectDate" ngModel class="form-control" required>
+    </div>
+        <input type="submit" value="add Defect" class="btn btn-dark">
+         </div>
+        </form>
+    <div *ngIf="defect!=undefined">
+        <div class="alert alert-success" role="alert">
+  defects details updated
+          </div>
+    </div>
+        </div>
+    

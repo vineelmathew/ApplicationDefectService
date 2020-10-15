@@ -1,1 +1,34 @@
-<p>updateproject works!</p>
+
+    <div class="container">
+        <form #addproject=ngForm (ngSubmit)="saveProject(addproject)">
+        <div class="form-group">
+            <label>Enter the project id to update</label>
+            <input type="number" name="projectId" ngModel class="form-control">
+        </div>
+         <div class="form-group">
+         <label>Project Name</label>
+    <input type="text" name="projectName" ngModel class="form-control">
+    <div class="form-group">
+    <label>Project Lead</label>
+    <input type="text" name="projectLead" ngModel class="form-control" required>
+    </div>
+    <div class="form-group">
+    <label>No of people assigned</label>
+    <input type="number" name="teamCount" ngModel class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Project starting Date</label>
+        <input type="datetime-local" name="startDate" ngModel class="form-control" required>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="update project" class="form-control">
+    </div>
+         </div>
+        </form>
+    <div *ngIf="project!=undefined">
+        <div class="alert alert-success" role="alert">
+           Updated the project
+          </div>
+    </div>
+        </div>
+    
