@@ -8,12 +8,18 @@ import { DefectService } from './service/defectservice';
 import { ProjectService } from './service/projectservice';
 import { HttpClientModule } from '@angular/common/http';
 import { ProjectbyIdComponent } from './projectby-id/projectby-id.component';
+import { AdddefectComponent } from './adddefect/adddefect.component';
+import { GetalldefectsComponent } from './getalldefects/getalldefects.component';
+import { GetallprojectsComponent } from './getallprojects/getallprojects.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddprojectComponent,
-    ProjectbyIdComponent
+    ProjectbyIdComponent,
+    AdddefectComponent,
+    GetalldefectsComponent,
+    GetallprojectsComponent
   ],
   imports: [
     BrowserModule,

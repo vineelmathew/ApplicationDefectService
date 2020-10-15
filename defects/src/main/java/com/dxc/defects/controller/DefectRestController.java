@@ -8,12 +8,12 @@ import com.dxc.defects.service.IDefectService;
 import com.dxc.defects.utility.DateTimeUtil;
 import com.dxc.defects.utility.DefectUtility;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/defects")
@@ -27,7 +27,7 @@ public class DefectRestController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping("/add")
+    @PostMapping("/add")
     public DefectDto addDefect(@RequestBody CreateDefect request)
     {
 
@@ -50,7 +50,24 @@ public class DefectRestController {
           ProjectDto projectDto=restTemplate.getForObject(geturl,ProjectDto.class);
           return projectDto;
     }
-
-
+   @GetMapping("/getall")
+    public List<DefectDto> getAllDefects()
+    {
+        List<Defect> defectList=defectService.getAllDefects();
+        List<DefectDto> results=new ArrayList<>();
+        for(Defect defect:defectList)
+        {
+            Integer pId=defect.getProjectId();
+            ProjectDto projectId=getProjectId(pId);
+            DefectDto convertDto=defectUtility.defectDto(defect,projectId);
+            results.add(convertDto);
+        }
+        return results;
+    }
+    @DeleteMapping("/delete/{id}")
+    public void remove(@PathVariable(value = "id")Integer id)
+    {
+        defectService.removeDefect(id);
+    }
 
 }

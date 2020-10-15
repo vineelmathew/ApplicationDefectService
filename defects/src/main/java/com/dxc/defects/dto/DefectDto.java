@@ -1,6 +1,5 @@
 package com.dxc.defects.dto;
 
-import javax.persistence.Id;
 
 public class DefectDto {
     private Integer id;
@@ -12,19 +11,6 @@ public class DefectDto {
     private String projectLead;
     private Integer teamCount;
     private long startDate;
-
-    public DefectDto(Integer id, String summary, String priority, long defectDate, Integer projectId,
-                     String projectName, String projectLead, Integer teamCount, long startDate) {
-        this.id = id;
-        this.summary = summary;
-        this.priority = priority;
-        this.defectDate = defectDate;
-        this.projectId = projectId;
-        this.projectName = projectName;
-        this.projectLead = projectLead;
-        this.teamCount = teamCount;
-        this.startDate = startDate;
-    }
 
     public String getProjectName() {
         return projectName;

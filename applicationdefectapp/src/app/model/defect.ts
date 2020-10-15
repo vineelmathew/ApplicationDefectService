@@ -1,9 +1,10 @@
 export class Defect
 {
-    private summary:string;
-    private  priority:string;
-    private  defectDate;
-    private  projectId:number;
+    id:number;
+    summary:string;
+     priority:string;
+     defectDate;
+     projectId:number;
     constructor(summary:string,priority:string,defectDate,projectId:number)
     {
         this.summary=summary;
@@ -11,19 +12,22 @@ export class Defect
         this.defectDate=defectDate;
         this.projectId=projectId;
     }
-    getProjectId()
+    getProjectId():number
     {
         return this.projectId;
     }
-    getSummary()
+    getSummary():string
     {
         return this.summary;
     }
     getDefectDate(){
         return this.defectDate;
     }
-    getPriority()
+    getPriority():string
     {
         return this.priority;
+    }
+    getId():number{
+        return this.id;
     }
 }

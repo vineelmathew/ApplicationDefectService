@@ -29,7 +29,6 @@ export class AddprojectComponent implements OnInit {
         success=>
         {
           console.log("project added");
-          console.log(success.getProjectLead,success.getProjectName,success.getStartDate,success.getTeamCount);
         }
     );
 

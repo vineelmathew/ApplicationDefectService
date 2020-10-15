@@ -1,0 +1,34 @@
+<div class="fluid-container">
+<table class="table table-bordered table-striped table-dark">
+    <thead>
+      <tr>
+          <th>DefectId</th>
+          <th>summary</th>
+          <th>priority</th>
+          <th>defectDate</th>
+          <th>projectId</th>
+          <th>project Name</th>
+          <th>project Lead</th>
+          <th>team count</th>
+          <th>project starting date</th> 
+          <th>Delete the Defect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let defect of defects">
+      <td>{{defect.id}}</td>
+      <td>{{defect.summary}}</td>
+      <td>{{defect.priority}}</td>
+      <td>{{defect.defectDate|date:'short'}}</td>
+      <td>{{defect.projectId}}</td>
+      <td>{{defect.projectName}}</td>
+      <td>{{defect.projectLead}}</td>
+      <td>{{defect.teamCount}}</td>
+      <td>{{defect.startDate|date:'short'}}</td>
+      <td>
+        <button class="form-control" (click)="delete(defect.id)">remove</button>
+      </td>
+      </tr>
+    </tbody>
+</table>
+</div>

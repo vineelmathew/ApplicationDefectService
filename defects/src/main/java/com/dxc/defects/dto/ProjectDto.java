@@ -6,15 +6,6 @@ public class ProjectDto {
     private String projectLead;
     private Integer teamCount;
     private long startDate;
-
-    public ProjectDto(Integer projectId, String projectName, String projectLead, Integer teamCount, long startDate) {
-        this.projectId = projectId;
-        this.projectName = projectName;
-        this.projectLead = projectLead;
-        this.teamCount = teamCount;
-        this.startDate = startDate;
-    }
-
     public ProjectDto()
     {
 
