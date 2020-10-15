@@ -3,6 +3,7 @@ package com.dxc.defects.controller;
 import com.dxc.defects.dto.CreateDefect;
 import com.dxc.defects.dto.DefectDto;
 import com.dxc.defects.dto.ProjectDto;
+import com.dxc.defects.dto.UpdateDefect;
 import com.dxc.defects.entity.Defect;
 import com.dxc.defects.service.IDefectService;
 import com.dxc.defects.utility.DateTimeUtil;
@@ -68,6 +69,19 @@ public class DefectRestController {
     public void remove(@PathVariable(value = "id")Integer id)
     {
         defectService.removeDefect(id);
+    }
+
+    @PutMapping("/update")
+    public DefectDto updateDefect(@RequestBody UpdateDefect request)
+    {
+        long startDate=request.getDefectDate();
+        LocalDateTime startDateConvert=timeUtil.toDateTime(startDate);
+        ProjectDto projectId=getProjectId(request.getProjectId());
+        Defect defect=new Defect(request.getSummary(),request.getPriority(),startDateConvert,projectId.getProjectId());
+        defect.setId(request.getId());
+        defect=defectService.addCreate(defect);
+        DefectDto convertDto=defectUtility.defectDto(defect,projectId);
+        return convertDto;
     }
 
 }

@@ -1,13 +1,13 @@
 package com.dxc.project.dto;
 
-public class ProjectDetails {
+public class UpdateProject {
     private Integer projectId;
     private String projectName;
     private String projectLead;
     private Integer teamCount;
     private long startDate;
 
-    public ProjectDetails()
+    public UpdateProject()
     {
 
     }

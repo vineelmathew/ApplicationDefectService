@@ -1,6 +1,7 @@
 package com.dxc.project.controller;
 import com.dxc.project.dto.CreateProject;
 import com.dxc.project.dto.ProjectDetails;
+import com.dxc.project.dto.UpdateProject;
 import com.dxc.project.entity.Project;
 import com.dxc.project.service.IProjectService;
 import com.dxc.project.util.DateTimeUtil;
@@ -58,6 +59,21 @@ public class ProjectRestController {
         return results;
     }
 
+    @PutMapping("/update")
+    public ProjectDetails updateProject(@RequestBody UpdateProject request)
+    {
+        long startDate=request.getStartDate();
+        LocalDateTime startDateConvert=convertTime.toDateTime(startDate);
+        Project project=new Project();
+        project.setProjectLead(request.getProjectLead());
+        project.setProjectName(request.getProjectName());
+        project.setTeamCount(request.getTeamCount());
+        project.setStartDate(startDateConvert);
+        project.setProjectId(request.getProjectId());
+        service.addProject(project);
+        ProjectDetails convertDto=projectUtility.projectDto(project);
+        return convertDto;
+    }
     @DeleteMapping("/delete/{id}")
     public void deleteProjectById(@PathVariable(value = "id")Integer id)
     {
