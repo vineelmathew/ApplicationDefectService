@@ -4,6 +4,7 @@ import { Project } from '../model/project';
 import { Observable } from 'rxjs';
 @Injectable()
 export class ProjectService{
+
 baseurl="http://localhost:8888/projects";
 constructor(private http:HttpClient)
 {
@@ -32,4 +33,9 @@ updateProject(project:Project):Observable<Project>
     let result:Observable<Project>=this.http.put<Project>(updateurl,project);
     return result;
 }
+getProjectById(id: any): Observable<Project> {
+    let geturl=this.baseurl+"/get/"+id;
+    let result:Observable<Project>=this.http.get<Project>(geturl);
+    return result;
+  }
 }

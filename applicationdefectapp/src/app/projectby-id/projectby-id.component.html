@@ -1,1 +1,14 @@
-<p>projectby-id works!</p>
+<form #getform=ngForm (ngSubmit)="projectById(getform)">
+    <div class="form-group">
+        <label>enter the project ID</label>
+        <input type="number" name="projectId" ngModel class="form-control">
+    </div>
+    <input type="submit" value="Get details" class="btn btn-success">
+</form>
+<div *ngIf="project!=undefined" class="project-details">
+    <p>project Id{{project.projectId}}</p>
+    <p>project Name{{project.projectName}}</p>
+    <p>project lead{{project.projectLead}}</p>
+    <p>project teamcount{{project.teamCount}}</p>
+    <p>project starting date {{project.startDate| date:'short'}}</p>
+</div>

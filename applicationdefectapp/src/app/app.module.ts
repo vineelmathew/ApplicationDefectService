@@ -13,7 +13,6 @@ import { GetalldefectsComponent } from './getalldefects/getalldefects.component'
 import { GetallprojectsComponent } from './getallprojects/getallprojects.component';
 import { UpdateprojectComponent } from './updateproject/updateproject.component';
 import { UpdatedefectComponent } from './updatedefect/updatedefect.component';
-import { DefectbyIdComponent } from './defectby-id/defectby-id.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { DefectbyIdComponent } from './defectby-id/defectby-id.component';
     GetallprojectsComponent,
     UpdateprojectComponent,
     UpdatedefectComponent,
-    DefectbyIdComponent
   ],
   imports: [
     BrowserModule,
