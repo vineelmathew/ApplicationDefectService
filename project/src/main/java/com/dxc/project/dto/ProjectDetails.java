@@ -7,11 +7,18 @@ public class ProjectDetails {
     private Integer teamCount;
     private long startDate;
 
+    public ProjectDetails(Integer projectId, String projectName, String projectLead, Integer teamCount, long startDate) {
+        this.projectId = projectId;
+        this.projectName = projectName;
+        this.projectLead = projectLead;
+        this.teamCount = teamCount;
+        this.startDate = startDate;
+    }
+
     public ProjectDetails()
     {
 
     }
-
     public Integer getProjectId() {
         return projectId;
     }

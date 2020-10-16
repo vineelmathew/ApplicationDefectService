@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { observable, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Defect } from '../model/defect';
+import { updateDefect } from '../model/updatedefect';
 @Injectable()
 export class DefectService
 {
-
+ 
     baseurl="http://localhost:7777/defects";
 constructor(private http:HttpClient)
 {
@@ -29,4 +30,10 @@ delete(id:number):Observable<void>
     let observable:Observable<void>=this.http.delete<void>(url);
     return observable;
 }
+updateDefect(defect: updateDefect): Observable<Defect> {
+    let updateurl=this.baseurl+"/update";
+    let result:Observable<Defect>=this.http.put<Defect>(updateurl,defect);
+    return result;
+}
+
 }

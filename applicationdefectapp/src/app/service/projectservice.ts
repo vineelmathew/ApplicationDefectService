@@ -26,6 +26,10 @@ delete(id:number):Observable<void>
     let observable:Observable<void>=this.http.delete<void>(url);
     return observable;
 }
-
-
+updateProject(project:Project):Observable<Project>
+{
+    let updateurl=this.baseurl+"/update";
+    let result:Observable<Project>=this.http.put<Project>(updateurl,project);
+    return result;
+}
 }
